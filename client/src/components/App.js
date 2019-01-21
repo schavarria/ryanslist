@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route } from 'react-router-dom' 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
 import store from '../store'
 
 import Home from './Home'
+import List from './List'
+import Post from './Post'
+import Scat from './Singlecat'
 
 class App extends Component {
   render() {
@@ -11,7 +14,13 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-            <Route path="/" exact component={Home} />
+            <Switch>
+              <Route exact path="/"  component={Home} />
+              <Route  path="/post/:id"  component={Post} />
+              <Route  path="/:slug/:id"  component={Scat} />
+              <Route  path="/:slug/:id"  component={List} />
+              
+            </Switch>
           </div>
         </Router>
       </Provider>
