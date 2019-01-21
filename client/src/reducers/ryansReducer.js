@@ -1,7 +1,8 @@
 const initialState = {
   categories: [],
   posts:[],
-  post:{}
+  post:{},
+  scat:[]
 }
 
 export default function (state = initialState, action) {
@@ -13,8 +14,8 @@ export default function (state = initialState, action) {
       return {...state, posts: action.payload}
     case 'GET_POST':
       return {...state, post: action.payload}
-    // case 'GET_SINGLECAT':
-    //   return {...state, scat: action.payload}  
+    case 'GET_SINGLECAT':
+      return {...state, scat: action.payload}  
     default:
       return state
   }

@@ -35,14 +35,14 @@ Router.get('/post/:id', (req, res, next) =>{
 })
 
 // //single category page
-// Router.get('/:category/:id', (req, res, next) =>{
-//   let id = req.params.id
-//   const sql = 'SELECT photo, title, description FROM posts LEFT JOIN categories ON categories.parent_id = posts.parent_id WHERE categories.parent_id = ?'
+Router.get('posts/:category/:id', (req, res, next) =>{
+  let id = req.params.id
+  const sql = 'SELECT photo, title, description FROM posts LEFT JOIN categories ON categories.parent_id = posts.parent_id WHERE categories.parent_id = ?'
   
-//   conn.query (sql, [id], (err, results, fields) =>{
-//     res.json(results)
-//   })
-// })
+  conn.query (sql, [id], (err, results, fields) =>{
+    res.json(results)
+  })
+})
 
 //subcat posts
 Router.get('/:posts/:id', (req, res, next) =>{

@@ -30,11 +30,11 @@ export function getPost(id) {
   })
 }
 
-// export function getsingleCat(slug,id) {
-//   axios.get('/' + slug + '/' + id).then(resp => {
-//     store.dispatch({
-//       type: 'GET_SINGLECAT', 
-//       payload: resp.data
-//     })
-//   })
-// }
+export function getsingleCat(slug,id) {
+  axios.get('/posts' + '/' + slug + '/' + id).then(resp => {
+    store.dispatch({
+      type: 'GET_SINGLECAT', 
+      payload: resp.data
+    })
+  })
+}
