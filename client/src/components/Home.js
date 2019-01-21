@@ -15,7 +15,7 @@ class Home extends Component {
         <div>
           {this.props.categories.map(items=> (
           <div>
-           <Link to={`/${items.slug}/${items.id}`}> <h3>{items.name}</h3></Link>
+           <Link to={`/posts/${items.slug}/${items.id}`}> <h3>{items.name}</h3></Link>
             <div>{items.subcat.map(allsubs => (
               <Link to={`/${allsubs.slug}/${allsubs.id}`}> <div>{allsubs.name}</div> </Link>
             ))}

@@ -11,9 +11,9 @@ class Scat extends Component {
   render() {
     return (
       <div>
-        <h1>Single Category Page</h1>
+        <h1>Single Catergory Page</h1>
         <div>{this.props.scat.map(allposts => (
-              <Link to={`/${allposts.slug}/${allposts.id}`}> <div>{allposts.title}</div> </Link>
+              <Link to={`/${allposts.slug}/${allposts.id}`}><div> <img src={allposts.photo}/> {allposts.title}</div> </Link>
             ))}
             </div>
       </div>
