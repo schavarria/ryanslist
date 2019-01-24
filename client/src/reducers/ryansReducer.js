@@ -2,7 +2,8 @@ const initialState = {
   categories: [],
   posts:[],
   post:{},
-  scat:[]
+  scat:[],
+  form:{}
 }
 
 export default function (state = initialState, action) {
@@ -15,7 +16,7 @@ export default function (state = initialState, action) {
     case 'GET_POST':
       return {...state, post: action.payload}
     case 'GET_SINGLECAT':
-      return {...state, scat: action.payload}  
+      return {...state, scat: action.payload}   
     default:
       return state
   }

@@ -34,21 +34,26 @@ Router.get('/post/:id', (req, res, next) =>{
   })
 })
 
-// //single category page
+ //single category page
 Router.get('/posts/:category/:id', (req, res, next) =>{
   let id = req.params.id
-  const sql = 'SELECT photo, title, description FROM posts LEFT JOIN categories ON categories.id = posts.parent_id WHERE categories.id = ?'
+  // const sql = 'SELECT photo, title, description FROM posts LEFT JOIN categories ON categories.id = posts.parent_id WHERE categories.id = ?'
+
+  const sql = `select p.title, p.description, p.id, c.parent_id as parent_id
+  from posts p 
+  left join categories c ON p.cat_id = c.id
+  where p.cat_id = ? or c.parent_id = ?`
   
-  conn.query (sql, [id], (err, results, fields) =>{
+  conn.query (sql, [id, id], (err, results, fields) =>{
     res.json(results)
   })
 })
 
 //add a new post page 
-Router.post('/newpost', (req, res, next)=>{
-  const sql = 'INSER INTO posts (photo, title, description, parent_id) VALUES (?, ?, ?, ?)'
+Router.post('/form', (req, res, next)=>{
+  const sql = 'INSERT INTO posts (photo, title, description, cat_id) VALUES (?, ?, ?, ?)'
 
-  const values = [req.body.photo, req.body.title, req.body.description, req.body.parent_id]
+  const values = [req.body.photo, req.body.title, req.body.description, req.body.id,]
 
   conn.query(sql, values, (err, results, fields)=>{
     console.log(results)
@@ -56,7 +61,7 @@ Router.post('/newpost', (req, res, next)=>{
   })
 })
 
-//subcat posts
+//subcategories-posts
 Router.get('/:posts/:id', (req, res, next) =>{
   let id = req.params.id
   const sql = 'SELECT * FROM posts WHERE cat_id = ?'

@@ -38,3 +38,7 @@ export function getsingleCat(slug,id) {
     })
   })
 }
+// todo app
+export function getForm(post) {
+  return axios.post('/form/',post)
+}

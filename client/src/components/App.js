@@ -7,6 +7,9 @@ import Home from './Home'
 import List from './List'
 import Post from './Post'
 import Scat from './Singlecat'
+import Form from './Form'
+
+
 
 class App extends Component {
   render() {
@@ -18,6 +21,7 @@ class App extends Component {
               <Route exact path="/"  component={Home} />
               <Route  path="/post/:id"  component={Post} />
               <Route  path="/posts/:slug/:id"  component={Scat} />
+              <Route path="/form/:slug/:id" component={Form} />
               <Route  path="/:slug/:id"  component={List} />
               
             </Switch>
