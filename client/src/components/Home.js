@@ -16,7 +16,7 @@ class Home extends Component {
         <div className='leftColumn'>
           <h1>Ryanslist</h1>
           <p>my account</p>
-          <input type="text" name="searchbar" placeholder="search ryanslist"/>
+          <input type="text" name="homesearchbar" placeholder="search ryanslist"/>
           <p>event calendar</p>
           <img src="https://files.slack.com/files-pri/T9BFJRRUG-FFMEXVCTV/screen_shot_2019-01-23_at_4.09.58_pm.png"/>
           <p>help, faq, abuse, legal</p>

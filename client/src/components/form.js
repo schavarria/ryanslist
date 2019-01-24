@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getForm } from '../actions/ryansActions';
-import { Link } from 'react-router-dom'
+
+import '../styles/formStyles.css'
+
 
 class Form extends Component {
   state = {
@@ -38,9 +40,9 @@ class Form extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input autoComplete='off' type="url" name="photo" onChange={this.handleChange} placeholder="Photo URL" value={this.state.photo}/>
-          <input autoComplete='off' type="text" name="title" onChange={this.handleChange} placeholder="Title" value={this.state.title}/>
-          <textarea autoComplete='off' name="description" onChange={this.handleChange} placeholder="Description" value={this.state.description}></textarea>
+          <input className="image" autoComplete='off' type="url" name="photo" onChange={this.handleChange} placeholder="Photo URL" value={this.state.photo}/> <br/>
+          <input className="formtitle" autoComplete='off' type="text" name="title" onChange={this.handleChange} placeholder="Title" value={this.state.title}/><br/>
+          <textarea className="textarea" autoComplete='off' name="description" onChange={this.handleChange} placeholder="Description" value={this.state.description}></textarea><br/>
           <button type="submit">Submit</button> 
 
         </form>

@@ -7,7 +7,7 @@ li{
 }
 
 .bodyCon{
-    width: 600px;
+    width: 700px;
     margin:auto;
 }
 
@@ -38,8 +38,8 @@ p{
     display: flex;
 }
 
-.searchbar{
-    width: 600px;
+.listsearchbar{
+    width: 700px;
     margin: auto;
     border: 1px solid gray;
     border-radius: 5px;
@@ -50,5 +50,29 @@ p{
 
 .catname{
     color: rgb(35, 35, 189);
+    width: 150px;
+}
+
+.listleftCon{
+    width: 170px;
+    padding-left:10px;
+}
+
+.zipCon{
+    display: flex;
+    
+}
+
+.zip{
+    width: 60px;
+}
+
+.miles{
+    width: 40px;
+    margin-right: 10px;
+}
+
+.listCon{
+    display: flex;
 }
 
